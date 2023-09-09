@@ -43,6 +43,7 @@ interface ISheet {
   title: string;
   race: RACES;
   clan?: CLANS | BLOODLINES;
+  uri?: string;
   isActive: boolean;
   createdAt?: Date;
   updatedAt?: Date;

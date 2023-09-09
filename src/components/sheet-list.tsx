@@ -1,10 +1,11 @@
 import React from "react";
 import { StyleSheet, FlatList } from 'react-native';
 import { ISheet } from "../models/sheet.model";
-import Sheet from "./sheet";
+import SheetItem from "./sheet-item";
 
 interface ISheetListProps {
-  data: ISheet[]
+  data: ISheet[],
+  navigation: any,
 }
 
 const SheetList = (props: ISheetListProps) => {
@@ -15,7 +16,7 @@ const SheetList = (props: ISheetListProps) => {
         renderItem={
           (item: any) => {
             return (
-              <Sheet data={item.item} />
+              <SheetItem data={item.item} navigation={props.navigation} />
             )
           }
         }
@@ -28,11 +29,7 @@ export default SheetList
 
 const styles = StyleSheet.create({
   container: {
-    // height: '100%', maxHeight: '100%',
-    height: 500,
-    width: '100%',
     flexDirection: 'column',
-    padding: 10,
     overflow: 'scroll',
   },
 });
